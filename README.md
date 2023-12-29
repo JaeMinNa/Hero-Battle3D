@@ -26,10 +26,6 @@
 </p>
 <p align="center">
   <img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/5b9a0d72-c012-4436-85a2-642a9976d4e8" width="49%"/>
-  <img src="https://github.com/gusrb0296/RogueLike/assets/149379194/8d981c75-96af-4cab-a6f3-aab2d8acfebe" width="49%"/>
-</p>
-<p align="center">
-  <img src="https://github.com/gusrb0296/RogueLike/assets/149379194/ab7b2841-b101-4147-9646-f059d381bc17" width="49%"/>
   <img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/5091c433-39b7-47b7-9179-47f1a6dab768" width="49%"/>
 </p>
 
