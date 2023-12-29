@@ -54,7 +54,7 @@
 ## 🔍 세부내용
 ### FSM
 * Player : Idle, Walk, Run, Attack, Skill State 구현
-* Enemy : Idle, Chasing, Attack 구현
+* Enemy : Idle, Chasing, Attack State 구현
 <br/>
 
 ### 시네머신 카메라
