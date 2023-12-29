@@ -66,7 +66,7 @@
 ## ❓ 트러블 슈팅
 ### Enemy -> Player 피격 문제
 <p align="center">
-<img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/f0795ce6-932f-45c6-aee7-e64311fd73f1" width="1000">
+<img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/f0795ce6-932f-45c6-aee7-e64311fd73f1" width="50">
 </p>
 Player가 공격 시, Enemy 체력은 떨어지지만, Enemy가 아무리 공격을 해도 Player의 체력은 변함이 없었다. 
 처음에는 코드에 문제가 있는줄 알고 거의 처음부터 모든 스크립트를 훑어본 것 같다. 하지만 해결이 되지 않았고, 에셋이 문제인건가.. 아니면 사용하지않던 터레인을 사용해서 그런가.. 100가지 정도 경우의 수를 생각해봤지만 답이 나오지 않았다. 
