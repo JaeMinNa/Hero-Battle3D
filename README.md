@@ -66,7 +66,7 @@
 ## ❓ 트러블 슈팅
 ### Enemy -> Player 피격 문제
 <p align="center">
-<img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/f0795ce6-932f-45c6-aee7-e64311fd73f1" width="50%">
+<img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/f0795ce6-932f-45c6-aee7-e64311fd73f1" width="49%">
 </p>
 Player가 공격 시, Enemy 체력은 떨어지지만, Enemy가 아무리 공격을 해도 Player의 체력은 변함이 없었다. 
 처음에는 코드에 문제가 있는줄 알고 거의 처음부터 모든 스크립트를 훑어본 것 같다. 하지만 해결이 되지 않았고, 에셋이 문제인건가.. 아니면 사용하지않던 터레인을 사용해서 그런가.. 100가지 정도 경우의 수를 생각해봤지만 답이 나오지 않았다. 
@@ -100,20 +100,21 @@ if (normalizedTime < 1f)
 
 EnemyAttackState 스크립트 부분인데, stateMachine.Enemy.Data.Dealing_Start_TransitionTime에서 콜라이더가 켜지고 stateMachine.Enemy.Data.Dealing_End_TransitionTime에서 콜라이더가 꺼지도록 구현했다.
 <p align="center">
-<img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/c37859e4-8f11-4c4d-bef9-2564a31f3834" width="1000">
+<img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/c37859e4-8f11-4c4d-bef9-2564a31f3834" width="49%">
 </p>
 EnemySO가 위 처럼 설정되어있어서 0.1초만에 콜라이더가 나타났다가 사라진 것이다. Player가 Enemy를 공격할 때는 Player는 콤보공격이 있기때문에 이 부분이 조금 다르게 설정되어 있어서 Player는 콜라이더가 Enemy와 충분히 충돌할 수 있도록 설정되어있었다. 
 <p align="center">
-<img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/17bf9422-dba4-48d9-9ca0-aed9c38210e0" width="1000">
+<img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/17bf9422-dba4-48d9-9ca0-aed9c38210e0" width="49%">
 </p>
 버그를 수정하고 피격이 잘 들어가는 모습이다!
 <br/>
 
 ## 📒 프로젝트 소감
-이번 개인 프로젝트를 하면서 가장 크게 느낀 것은 게임 제작은 기초 공사가 중요하다라는 것이다.
-조금 귀찮고 어렵다고 초반부터 잘못된 방향으로 작업을 하게되면 이러한 부분이 스노우볼처럼 굴러와 나중에는 수정이 어려운 상황이 올 수도 있다라는 것을 느꼈다.
-이번 프로젝트를 하면서 아쉬웠던 점은, 인벤토리가 항상 처음부터 정렬된다는 것이다. 큰 게임을 만들기 위해서는 슬롯 각각 독립적으로 Item을 관리하는 인벤토리가 필요하기 때문에 보완이 필요한 것 같다.
-그리고 부모 클래스인 Item에 접근할 수가 없어서 Item 프리팹을 Tag로 나눈것은 효율적인 방법이 아니라고 생각한다. 정작 Item Tag가 필요한 상황에서 사용할 수 없다. 이 부분은 해결방법을 따로 공부하도록 하겠다.
-지난번 프로젝트보다 많이 성장했다고 생각하지만, 아직 부족한 부분도 많았다. 다음 프로젝트에서는 더 좋은 프로젝트를 완성하겠다.
+항상 느끼는 것은 머리속에 구현하고 싶은 욕심은 엄청 많은데 정작 1개를 구현하는데 최소 1~2시간이라는 것이다. 
+이번 개인과제도 개인적으로 적의 스킬 사용, Player 회피 스킬, 아이템 등 여러가지 구현하고 싶었으나 제출 기한을 맞추기 위해 1:1 배틀까지만 구현하고 마무리했다. 
+아직까지 개발 레벨이 많이 높지않아서 막히는 부분이 많아서 그런 것 같다. 그리고 새로 느낀 새로운 교훈은 '애니메이션은 누군가가 만들어 놓은 것을 사용하자...' 이다. 
+Player의 스킬을 구현할 애니메이션이 부족해서 다른 캐릭터의 애니메이션을 사용했는데 정말 힘들게 스킬 구현을 마쳤지만 애니메이션 오류인지 스킬을 사용할 때 마다 발에서부터 조금씩 땅 속으로 들어가는 버그를 발견했다. 
+애써서 몇시간동안 구현했는데 제일 마지막이 해결할 수 없는 버그라서 맥이 너무 빠졌다. 결국 기존 사용했던 애니메이션을 사용해서 스킬구현을 했지만 정말 큰 또 다른 교훈을 얻었다.
+다음 프로젝트에서는 조금더 넉넉하게 시간적 여유를 가지고 작업을 하고, 리팩토리까지 해보겠다!
 
 
