@@ -74,6 +74,7 @@ Player가 공격 시, Enemy 체력은 떨어지지만, Enemy가 아무리 공격
 또 다시 원점으로 돌아가는 듯 했으나, 위 사진 처럼 콜라이더가 검을 휘두를 때 순간적으로 잠깐 나타났다가 검이 Player와 접촉할 때 쯤은 콜라이더가 없는 것을 확인했다. 정말 순식간에 나타났다가 없어졌기 때문에 눈으로 확인하기 어려워서 찾을 수가 없었던 것이다.
 <br/>
 
+
 ```
 float normalizedTime = GetNormalizedTime(stateMachine.Enemy.Animator, "Attack");
 if (normalizedTime < 1f)
@@ -94,6 +95,7 @@ if (normalizedTime < 1f)
     }
 }
 ```
+
 <br/>
 
 EnemyAttackState 스크립트 부분인데, stateMachine.Enemy.Data.Dealing_Start_TransitionTime에서 콜라이더가 켜지고 stateMachine.Enemy.Data.Dealing_End_TransitionTime에서 콜라이더가 꺼지도록 구현했다.
