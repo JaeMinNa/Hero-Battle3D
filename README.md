@@ -74,84 +74,37 @@ Player가 공격 시, Enemy 체력은 떨어지지만, Enemy가 아무리 공격
 또 다시 원점으로 돌아가는 듯 했으나, 위 사진 처럼 콜라이더가 검을 휘두를 때 순간적으로 잠깐 나타났다가 검이 Player와 접촉할 때 쯤은 콜라이더가 없는 것을 확인했다. 정말 순식간에 나타났다가 없어졌기 때문에 눈으로 확인하기 어려워서 찾을 수가 없었던 것이다.
 <br/>
 
-<img src="https://github.com/JaeMinNa/SpartanDungeonUnityProject/assets/149379194/87189de8-efd6-4f41-a59d-d693c3630f1a" width="1000">
-
 ```
-if(item.tag == "WeaponItem")
+float normalizedTime = GetNormalizedTime(stateMachine.Enemy.Animator, "Attack");
+if (normalizedTime < 1f)
 {
-    weapon = item.GetComponent<Weapon>();
-    if(weapon.isEquip == true)
+    if (normalizedTime >= stateMachine.Enemy.Data.ForceTransitionTime)
+        TryApplyForce();
+
+    if (!alreadyAppliedDealing && normalizedTime >= stateMachine.Enemy.Data.Dealing_Start_TransitionTime)
     {
-        InventorySlotTempImage[count].transform.Find($"EquipButton{count}/Text (TMP)").gameObject.SetActive(true);
+        stateMachine.Enemy.Weapon.SetAttack(stateMachine.Enemy.Data.Damage, stateMachine.Enemy.Data.Force);
+        stateMachine.Enemy.Weapon.gameObject.SetActive(true);
+        alreadyAppliedDealing = true;
     }
-}
-else
-{
-    armor = item.GetComponent<Armor>();
-    if (armor.isEquip == true)
+
+    if (alreadyAppliedDealing && normalizedTime >= stateMachine.Enemy.Data.Dealing_End_TransitionTime)
     {
-        InventorySlotTempImage[count].transform.Find($"EquipButton{count}/Text (TMP)").gameObject.SetActive(true);
+        stateMachine.Enemy.Weapon.gameObject.SetActive(false);
     }
 }
 ```
 <br/>
 
-### 9개의 버튼 함수 생성
-인벤토리에서 각각 슬롯을 만들어서 인스펙터 창에서 연결했기 때문에, 9개의 버튼을 생성했다. 이 버튼들은 각각 이 버튼들이 가지고 있는 Text에 접근해서
-gameObject를 활성화해서 장착[E] 표시를 해야 한다. 그렇게되면 각각 버튼에 연결할 9개의 함수가 필요해서, 불필요하게 코드가 엄청 길어졌다. 
-그래서 EventSystem를 사용해서 마지막에 클릭한 버튼의 이름에 접근해서, 모든 버튼에 적용가능한 하나의 함수를 작성했다.
-<br/>
-
-```
-using UnityEngine.EventSystems;
-
-public void EquipButton()
-{
-string str = GetButtonName().Substring(11);
-int count = int.Parse(str);
-
-if(inventory.InventorySlot[count].tag == "WeaponItem")
-{
-  weapon = inventory.InventorySlot[count].GetComponent<Weapon>();
-  if (weapon.isEquip == true)
-  {
-      weapon.isEquip = false;
-      inventory.InventorySlotTempImage[count].transform.Find($"EquipButton{count}/Text (TMP)").gameObject.SetActive(false);
-      equipment.DisEquip(inventory.InventorySlot[count]);
-  }
-  else
-  {
-      weapon.isEquip = true;
-      inventory.InventorySlotTempImage[count].transform.Find($"EquipButton{count}/Text (TMP)").gameObject.SetActive(true);
-      equipment.Equip(inventory.InventorySlot[count]);
-  }
-}
-else
-{
-  armor = inventory.InventorySlot[count].GetComponent<Armor>();
-  if (armor.isEquip == true)
-  {
-      armor.isEquip = false;
-      inventory.InventorySlotTempImage[count].transform.Find($"EquipButton{count}/Text (TMP)").gameObject.SetActive(false);
-      equipment.DisEquip(inventory.InventorySlot[count]);
-  }
-  else
-  {
-      armor.isEquip = true;
-      inventory.InventorySlotTempImage[count].transform.Find($"EquipButton{count}/Text (TMP)").gameObject.SetActive(true);
-      equipment.Equip(inventory.InventorySlot[count]);
-  }
-}
-
-}
-
-public string GetButtonName()
-{
-    string EventButtonName = EventSystem.current.currentSelectedGameObject.name;
-
-    return EventButtonName;
-}
-```
+EnemyAttackState 스크립트 부분인데, stateMachine.Enemy.Data.Dealing_Start_TransitionTime에서 콜라이더가 켜지고 stateMachine.Enemy.Data.Dealing_End_TransitionTime에서 콜라이더가 꺼지도록 구현했다.
+<p align="center">
+<img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/c37859e4-8f11-4c4d-bef9-2564a31f3834" width="1000">
+</p>
+EnemySO가 위 처럼 설정되어있어서 0.1초만에 콜라이더가 나타났다가 사라진 것이다. Player가 Enemy를 공격할 때는 Player는 콤보공격이 있기때문에 이 부분이 조금 다르게 설정되어 있어서 Player는 콜라이더가 Enemy와 충분히 충돌할 수 있도록 설정되어있었다. 
+<p align="center">
+<img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/17bf9422-dba4-48d9-9ca0-aed9c38210e0" width="1000">
+</p>
+버그를 수정하고 피격이 잘 들어가는 모습이다!
 <br/>
 
 ## 📒 프로젝트 소감
