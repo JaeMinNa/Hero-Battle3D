@@ -17,20 +17,20 @@
 
 ## ▶️ 게임 스크린샷
 <p align="center">
-  <img src="https://github.com/gusrb0296/RogueLike/assets/149379194/d0d27cc1-c6cc-4eac-9e7b-b7318f62011b" width="49%"/>
-  <img src="https://github.com/gusrb0296/RogueLike/assets/149379194/22aa9a76-cfab-4c94-bb30-7d112db408c6" width="49%"/>
+  <img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/f6851ad6-5c59-4793-8ff1-fec945690540" width="49%"/>
+  <img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/5e0c84ea-ba9a-4fe3-b709-62fae1548ba4" width="49%"/>
 </p>
 <p align="center">
-  <img src="https://github.com/gusrb0296/RogueLike/assets/149379194/5df9b6bc-7749-419b-af46-381029da1bd7" width="49%"/>
-  <img src="https://github.com/gusrb0296/RogueLike/assets/149379194/8241f9e5-5444-4e26-94ec-926bb30ba1ec" width="49%"/>
+  <img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/0984f76f-d1e8-4c41-b3fb-bb1c4a581370" width="49%"/>
+  <img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/85510102-ab2a-45dc-9c96-987dabc6c0a4" width="49%"/>
 </p>
 <p align="center">
-  <img src="https://github.com/gusrb0296/RogueLike/assets/149379194/0d664d37-db47-4fc0-b588-7a0ad72db896" width="49%"/>
+  <img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/5b9a0d72-c012-4436-85a2-642a9976d4e8" width="49%"/>
   <img src="https://github.com/gusrb0296/RogueLike/assets/149379194/8d981c75-96af-4cab-a6f3-aab2d8acfebe" width="49%"/>
 </p>
 <p align="center">
   <img src="https://github.com/gusrb0296/RogueLike/assets/149379194/ab7b2841-b101-4147-9646-f059d381bc17" width="49%"/>
-  <img src="https://github.com/gusrb0296/RogueLike/assets/149379194/cc58fc1c-b94e-43ef-a821-d326926ae1b0" width="49%"/>
+  <img src="https://github.com/JaeMinNa/Hero-Battle3D/assets/149379194/5091c433-39b7-47b7-9179-47f1a6dab768" width="49%"/>
 </p>
 
 ## 🎮 구현기능
